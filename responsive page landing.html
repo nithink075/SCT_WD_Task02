@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      background-color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: 500;
+      padding: 5px 10px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: white;
+      color: #333;
+      border-radius: 4px;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://source.unsplash.com/1600x900/?nature,technology') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding-top: 70px;
+      text-align: center;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      background-color: #ff6600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 100px 20px;
+    }
+
+    .section-content {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="container">
+      <div class="logo">MyBrand</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Welcome to My Landing Page</h2>
+      <p>Scroll down to explore more</p>
+      <a href="#features" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="section-content">
+      <h2>Features</h2>
+      <p>Here are some amazing features of our website.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-content">
+      <h2>About Us</h2>
+      <p>We are a creative team building awesome websites.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-content">
+      <h2>Contact</h2>
+      <p>Feel free to reach out to us!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MyBrand. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll effect for navbar
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
